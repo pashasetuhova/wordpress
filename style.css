@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* @font-face {
+    font-family: 'Roboto Light';
+    src: url('Roboto-Light.eot');
+    src: url('../first_project/fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+    url('../first_project/fonts/Roboto-Light.woff') format('woff'),
+    url('../first_project/fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+это локальный способ подключения шрифтов, при таком способе так же надо в конкретных элементах указать нужный font-family (forn-weight можно стереть)
+этот код лучше положить в отдельный файл fonts.css и связать с html-файлом так же, как style.css через link */
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 1140px;
+    margin: 0 auto;
+} /* блок ограничивает контент по ширине, чтобы пользователь с любым разрешением экрана нормально видел сайт */
+
+.promo {
+    height: 850px;
+    /* background-image: url(bg/main_bg.jpg); необязательно писать так, так как свойство backgroud можт объединять в себе все свои спецификации, пример ниже */
+    background: url(img/bg/main_bg.jpg) center center /* position по оси Х и У */ /cover /* растягивание если картинка не помещается, слэш между 1 расположение и 2 растягивание свойствами необходим, иначе картинка не отобразится */ no-repeat; /* чтобы картинка не повторялась */
+    padding: 39px 0 0 62px;
+}
+
+.logo .logo_img {
+    display: block;
+    margin: 0 auto;
+}
+
+.logo .logo_text {
+    color: white;
+/*     font-family: "Roboto"; */ /* не нужно, так как шрифт уже подключили к общему тегу html, а жирность настраиваем с помощью font-weight */
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px; /* межстрочный интервал */
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 14px;
+}
+h1 { 
+    margin-top: 53px;
+}
+
+h2.title{
+margin-top: 30px;
+}
+
+.title {
+/*     font-family: "Roboto"; */
+    font-weight: 900;
+    font-size: 41px;
+    /* line-height: 41px; */
+    text-align: center;
+    text-transform: uppercase;
+    color: #F9BF3B;
+}
+
+.simple .title_big{
+    color: #FFFFFF;
+/*     font-family: "Roboto";  */
+    font-weight: 900;
+    font-size: 80px;
+    /* line-height: 80px; */
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 21px;
+}
+
+.promo .promo_text {
+    padding: 0 13px;
+    margin-top: 23px;
+/*     font-family: "Roboto Light"; */
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.promo .promo_text span {
+    color: #F9BF3B;
+    font-weight: bold;
+/*     font-family: "Roboto - Bold"; */
+}
+
+.promo .promo_btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 73px;
+    width: 313px;
+    height: 72px;
+    box-shadow: inset /* внутрь */ 0 /* смещение по оси Х  */ 0 /* смещение по оси Y */ 0 /* размытие: чем больше значение, тем более размыто */ rgba(0, 0, 0, 0.18);
+    border: 4px solid rgba(0, 0, 0, 0.23);
+    background-image: linear-gradient(to top, #2798B9 0%, #3AB6DA 100%);
+    text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.22);
+    color: #FFFFFF;
+/*     font-family: "Roboto Condensed"; */
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+    cursor: pointer; /* если навести на элемен, курсор изменит свой вид */
+    outline: none;
+}
+
+.more {
+margin-top: 73px;
+}
+
+.more .more_text {
+/*     font-family: "Roboto - Thin"; */
+    font-weight: 200;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+} 
+
+.more .more_img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 13px;
+}
+
+.waiting {
+    min-height: 607px;
+    background-color: #EFEFEF;
+    padding: 85px 0 75px 0;
+}
+
+.waiting .waiting_header, .finish_header, .webinar_header {
+/*     font-family: "Roboto"; */
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #252525;
+    text-align: center;
+}
+
+.finish .finish_header {
+    color:white;
+}
+
+.waiting .waiting_devider, .finish_devider {
+    margin: 0 auto;
+    margin-top: 18px;
+    width: 217px;
+    height: 4px;
+    background: #F9BF3B;
+}
+
+.waiting .waiting_subheader {
+/*     font-family: "Roboto"; */
+    font-size: 23px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 17px;
+    color: #4A4A4A;
+}
+
+.waiting .waiting_wrapper {
+    margin-top: 45px;
+    display: flex; /* технология Flexbox */
+    justify-content: space-between; 
+}
+
+.waiting .waiting_wrapper .waiting_item {
+    /* display: inline-block; */
+    /* vertical-align: top; */
+    /* margin: 0 15px; */
+    width: 339px;
+    text-align: center;
+}
+
+.waiting .waiting_wrapper .waiting_item .waiting_img {
+    width: 100%;
+}
+
+.waiting .waiting_wrapper .waiting_item .waiting_descr {
+    margin-top: 33px;
+/*     font-family: "Roboto"; */
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 21px;
+    color: #4A4A4A;
+}
+
+.optimization {
+min-height: 550px;
+padding: 102px 0 107px 0;
+}
+
+.optimization .optimization_header {
+    margin-left: 391px;
+/*     font-family: "Roboto"; */
+    font-weight: 900;
+    font-size: 29px;
+    /* line-height: 30px; */
+    /* display: flex; */
+    /* align-items: center; */
+    text-transform: uppercase;
+    color: #299CBD;
+}
+
+.optimization .optimization_text {
+    margin-top: 25px;
+    margin-left: 391px;
+/*     font-family: "Roboto Light"; */
+    /* font-style: normal; */
+    font-weight: 300;
+    font-size: 19px;
+   /*  line-height: 8px; */
+    /* display: flex;
+    align-items: center; */
+    color: #4A4A4A;
+}
+
+.optimization .optimization_text span {
+/*     font-family: "Roboto - Bold"; */
+    font-weight: 700;
+}
+
+.optimization .optimization_img {
+    position: absolute;
+    top: -41px;
+    left: -240px;
+    z-index: -1;
+}
+
+.finish {
+    min-height: 447px;
+    padding: 86px 0 79px 0;
+    background: url(img/bg/second_bg.jpg) center center/cover no-repeat;
+}
+
+.finish .finish_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 41px;
+}
+
+.finish .finish_wrapper .finish_item {
+    width: 204px;
+}
+
+.finish .finish_wrapper .finish_item .finish_round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 115px;
+    height: 115px;
+    background: #B4E2FF;
+    border-radius: 100%;
+}
+
+.finish .finish_wrapper .finish_item .finish_descr {
+    margin-top: 25px;
+    text-align: center;
+/*     font-family: "Roboto"; */
+    font-weight: 300;
+    font-size: 17px;
+    color: #EFEFEF;
+}
+
+.gift {
+    padding: 86px 0 100px 0;
+    background-color: #EFEFEF;
+}
+
+.gift .gift_icon {
+    display: block;
+    margin: 0 auto;
+}
+
+.gift .gift_descr {
+    padding: 45px 0;
+/*     font-family: "Roboto"; */
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 43px;
+    text-align: center;
+    color: #252525;
+}
+
+.gift .promo_btn {
+    display: block;
+    margin: 0 auto;
+    width: 313px;
+    height: 72px;
+    box-shadow: inset /* внутрь */ 0 /* смещение по оси Х  */ 0 /* смещение по оси Y */ 0 /* размытие: чем больше значение, тем более размыто */ rgba(0, 0, 0, 0.18);
+    border: 4px solid rgba(0, 0, 0, 0.23);
+    background-image: linear-gradient(to top, #2798B9 0%, #3AB6DA 100%);
+    text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.22);
+    color: #FFFFFF;
+/*     font-family: "Roboto Condensed"; */
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+    cursor: pointer; /* если навести на элемен, курсор изменит свой вид */
+    outline: none;
+}
+
+.webinar{
+    padding: 81px;
+}
+
+.webinar .webinar_icon {
+    display: block;
+    margin: 0 auto;
+}
+
+.webinar .webinar_header {
+    padding: 32px 0 27px 0;
+}
+
+.webinar .webinar_subheader {
+/*     font-family: "Roboto"; */
+    font-weight: 900;
+    font-size: 29px;
+    text-transform: uppercase;
+    color: #299CBD;
+    text-align: center;
+}
+
+.webinar .webinar_subsubheader {
+/*     font-family: "Roboto"; */
+    font-size: 23px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 19px;
+    margin-bottom: 32px;
+    color: #4A4A4A;
+}
+
+.end {
+    min-height: 266px;
+    margin: 0;
+    /* width: 2040px; */
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.end .links {
+    /* color: white; */
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    min-height: 36px;
+} 
+
+.end .support_link {
+    text-decoration: underline;
+    color: grey;
+}
+
+.end .conf_link {
+    text-decoration: underline;
+    color: grey;
+}
+
+.end .end_text {
+    color: grey;
+    text-align: center;
+}
+
+.end .vert_line {
+    margin: 0 5px 0 5px;
+    color: grey;
+}
